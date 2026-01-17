@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>King Barber | Barbería Profesional</title>
+  <meta name="description" content="King Barber - Cortes profesionales, barba y estilo. Agenda tu cita fácilmente por WhatsApp." />
+  <meta name="theme-color" content="#0f0f0f" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Página centrada en un contenedor -->
+  <main class="site">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="brand">
+        <img src="assets/logo.png" alt="King Barber - logo" class="brand-logo" id="brandLogo" />
+        <div class="brand-text">
+          <h1 id="businessName">King Barber</h1>
+          <p class="tagline">Estilo · Precisión · Actitud</p>
+        </div>
+      </div>
+
+      <nav class="top-actions" aria-label="Acciones principales">
+        <a id="cta-whatsapp" class="btn btn-primary" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-inner">
+        <h2 id="heroTitle">Barbería profesional en Bucaramanga</h2>
+        <p class="lead">Cortes modernos, barba y atención con estilo. Reserva tu cita y asegura tu horario.</p>
+
+        <div class="hero-actions">
+          <a id="hero-cta" class="btn btn-hero" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+          <button id="showTemplates" class="btn btn-outline" type="button" aria-haspopup="dialog">Mensajes rápidos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info cards (Horarios - Ubicación - Teléfono) -->
+    <section class="info-cards" aria-label="Información principal">
+      <article class="card">
+        <h3>Horarios</h3>
+        <p id="hoursText">Lun - Vie: 9:00 - 20:00<br>Sáb: 9:00 - 20:00 · Dom: Cerrado</p>
+      </article>
+
+      <article class="card">
+        <h3>Ubicación</h3>
+        <p id="addressText">Cl. 10 #19-58, Bucaramanga, Santander</p>
+        <a id="mapsLink" class="link" target="_blank" rel="noopener">Ver en Google Maps</a>
+      </article>
+
+      <article class="card">
+        <h3>Contacto</h3>
+        <p id="phoneText">320 839 9429</p>
+        <a id="callLink" class="link" href="tel:+573208399429">Llamar</a>
+      </article>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="section" aria-labelledby="servicesTitle">
+      <h3 id="servicesTitle">Servicios</h3>
+
+      <div class="services-grid" id="servicesGrid" role="list">
+        <!-- Las tarjetas de servicio se inyectan desde js/ui.js usando config.services -->
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="final-cta">
+      <div class="final-inner">
+        <h4>¿Listo para tu nuevo corte?</h4>
+        <p class="small">Reserva ahora y recibe atención profesional en King Barber.</p>
+        <a id="finalCta" class="btn btn-primary btn-large" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- Mensajes rápidos (dialog simulado) -->
+    <div id="templatesDialog" class="dialog" aria-hidden="true" role="dialog" aria-label="Plantillas de mensaje">
+      <div class="dialog-content" role="document">
+        <header class="dialog-header">
+          <h5>Mensajes rápidos</h5>
+          <button id="closeTemplates" class="btn-icon" aria-label="Cerrar">✕</button>
+        </header>
+        <div class="dialog-body" id="templatesList">
+          <!-- Plantillas inyectadas desde config.servicesMessages -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>© <span id="year"></span> King Barber · Todos los derechos reservados</p>
+    </footer>
+  </main>
+
+  <!-- Scripts: config -> ui -> main (orden intencional) -->
+  <script src="js/config.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Noscript fallback -->
+  <noscript>
+    <style>
+      .dialog { display:none; }
+    </style>
+    <div style="background:#fff;padding:12px;border:2px solid #e74c3c;text-align:center;">
+      JavaScript está deshabilitado en tu navegador. La página funciona mejor con JavaScript activado.
+    </div>
+  </noscript>
+</body>
+</html>
