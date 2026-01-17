@@ -1,0 +1,277 @@
+/* =========================
+   King Barber - styles.css
+   Mobile-first, centrado, elegante
+   ========================= */
+
+/* VARIABLES */
+:root{
+  --bg:#0f0f10;
+  --card:#141416;
+  --muted:#9aa0a6;
+  --accent:#c9a14a; /* dorado */
+  --white:#ffffff;
+  --max-width:1000px;
+  --radius:12px;
+  --shadow: 0 8px 24px rgba(0,0,0,0.45);
+}
+
+/* RESET BASICO */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body,#root{height:100%}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-text-size-adjust:100%;
+  line-height:1.45;
+  display:flex;
+  justify-content:center;
+  padding:24px 12px;
+}
+
+/* SITE */
+.site{
+  width:100%;
+  max-width:var(--max-width);
+  margin:0 auto;
+}
+
+/* HEADER */
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:12px;
+  margin-bottom:20px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-logo{
+  width:64px;
+  height:64px;
+  object-fit:contain;
+  border-radius:10px;
+  background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+  padding:6px;
+}
+
+.brand-text h1{
+  font-size:1.1rem;
+  letter-spacing:0.6px;
+  margin-bottom:2px;
+}
+
+.tagline{
+  color:var(--muted);
+  font-size:0.82rem;
+}
+
+/* TOP ACTIONS */
+.top-actions {
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:600;
+  text-decoration:none;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,0.04);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+
+.btn:hover{ transform:translateY(-3px) }
+.btn:active{ transform:translateY(-1px) }
+
+.btn-primary{
+  background:var(--accent);
+  color:#0a0a0a;
+  box-shadow: 0 6px 18px rgba(201,161,74,0.12);
+}
+
+.btn-hero{
+  background:#25d366;
+  color:var(--white);
+}
+
+.btn-outline{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.06);
+  color:var(--white);
+}
+
+/* HERO */
+.hero{
+  background: linear-gradient(180deg, rgba(0,0,0,0.18), transparent), url("../assets/logo.png");
+  background-repeat:no-repeat;
+  background-position:center right;
+  padding:28px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  margin-bottom:20px;
+  text-align:center;
+}
+
+.hero-inner{
+  max-width:720px;
+  margin:0 auto;
+}
+
+.hero h2{
+  font-size:1.5rem;
+  margin-bottom:8px;
+}
+
+.lead{
+  color:var(--muted);
+  margin-bottom:14px;
+  font-size:0.98rem;
+}
+
+/* INFO CARDS */
+.info-cards{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin:18px 0;
+}
+
+.card{
+  background:var(--card);
+  padding:16px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.03);
+  text-align:center;
+}
+
+.card h3{
+  color:var(--accent);
+  margin-bottom:8px;
+  font-size:0.98rem;
+}
+
+.card p{ color:var(--muted); font-size:0.95rem; margin-bottom:6px; }
+
+.link{
+  color:var(--white);
+  text-decoration:underline;
+  font-weight:600;
+}
+
+/* SERVICES GRID */
+.section{ margin:18px 0; }
+#servicesTitle{ text-align:center; color:var(--accent); margin-bottom:12px; font-size:1.05rem; }
+
+.services-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+
+/* servicio individual */
+.service{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  padding:14px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  border:1px solid rgba(255,255,255,0.02);
+}
+
+.service .title{ font-weight:600; }
+.service .price{ color:var(--muted); font-size:0.95rem; }
+
+/* CTA final */
+.final-cta{
+  margin:22px 0;
+  padding:18px;
+  border-radius:12px;
+  text-align:center;
+  background:linear-gradient(90deg, rgba(201,161,74,0.14), rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.02);
+}
+
+.final-inner h4{ margin-bottom:6px; }
+.final-inner .small{ color:var(--muted); margin-bottom:12px; }
+
+/* DIALOG (mensajes rapidos) */
+.dialog{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.6);
+  padding:20px;
+  visibility:hidden;
+  opacity:0;
+  transition:opacity .18s ease, visibility .18s;
+  z-index:30;
+}
+
+.dialog[aria-hidden="false"]{ visibility:visible; opacity:1; }
+
+.dialog-content{
+  width:100%;
+  max-width:560px;
+  background:var(--card);
+  border-radius:12px;
+  padding:12px;
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+.dialog-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px;
+}
+
+.dialog-body{ display:grid; gap:8px; max-height:360px; overflow:auto; padding-right:6px; }
+
+/* small UI */
+.btn-icon{
+  background:transparent;
+  border:none;
+  color:var(--muted);
+  font-size:1rem;
+  cursor:pointer;
+}
+
+/* FOOTER */
+.site-footer{
+  margin-top:18px;
+  text-align:center;
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
+/* RESPONSIVE - tablet/desktop */
+@media(min-width:720px){
+  .info-cards { grid-template-columns: repeat(3, 1fr); }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero { padding:40px; text-align:left; background-position:right center; }
+  .hero-inner { margin-left:8px; }
+}
